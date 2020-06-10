@@ -3,17 +3,21 @@
     "./**/node_modules"
   ],
   "compilerOptions": {
+    "module": "ESNext",
     "lib": [
-      "es6",
+      "esnext",
       "dom",
       "es2018.promise"
     ],
-    "target": "es5",
+    "target": "ESNext",
     "declaration": true,
     "sourceMap": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "experimentalDecorators": true,
+    "importHelpers": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
     "jsx": "react"
   }
 }

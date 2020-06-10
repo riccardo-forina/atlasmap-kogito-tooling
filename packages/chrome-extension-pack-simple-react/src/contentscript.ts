@@ -16,9 +16,12 @@
 
 import { startExtension, DefaultChromeRouter } from "@kogito-tooling/chrome-extension";
 import { SimpleReactEditorsRoutes } from "simple-react-editors";
+import "simple-react-editors/dist/index.css";
 
 startExtension({
   name: "KIE :: Kogito Simple React Editor",
   editorIndexPath: "envelope/index.html",
+  extensionIconUrl: "",
+  githubAuthTokenCookieName: "ghatcn",
   router: new DefaultChromeRouter(new SimpleReactEditorsRoutes())
 });

@@ -16,6 +16,12 @@
 
 import * as React from "react";
 import { EnvelopeBusInnerMessageHandler } from "@kogito-tooling/microeditor-envelope";
+import {
+  Atlasmap,
+  AtlasmapProvider,
+} from '@atlasmap/atlasmap';
+
+import "./SimpleReactEditor.css";
 
 export interface Props {
   exposing: (s: SimpleReactEditor) => void;
@@ -67,11 +73,34 @@ export class SimpleReactEditor extends React.Component<Props, State> {
 
   public render() {
     return (
-      <textarea
-        style={{ width: "100%", height: "100%", outline: 0, boxSizing: "border-box", border: 0 }}
-        value={this.state.content}
-        onInput={(e: any) => this.updateContent(e.target.value)}
-      />
+      // <textarea
+      //   style={{ width: "100%", height: "100%", outline: 0, boxSizing: "border-box", border: 0 }}
+      //   value={this.state.content}
+      //   onInput={(e: any) => this.updateContent(e.target.value)}
+      // />
+      <AtlasmapAdapter />
     );
   }
 }
+
+const AtlasmapAdapter: React.FunctionComponent = React.memo(() => {
+  return (
+    <AtlasmapProvider
+      baseJavaInspectionServiceUrl={'http://localhost:8585/v2/atlas/java/'}
+      baseXMLInspectionServiceUrl={'http://localhost:8585/v2/atlas/xml/'}
+      baseJSONInspectionServiceUrl={'http://localhost:8585/v2/atlas/json/'}
+      baseCSVInspectionServiceUrl={'http://localhost:8585/v2/atlas/csv/'}
+      baseMappingServiceUrl={'http://localhost:8585/v2/atlas/'}
+        // externalDocument={externalDocument}
+        // onMappingChange={onMappings}
+      >
+      <Atlasmap
+        allowImport={false}
+        allowExport={false}
+        allowReset={false}
+        allowDelete={false}
+        allowCustomJavaClasses={false}
+      />
+    </AtlasmapProvider>
+  )
+});

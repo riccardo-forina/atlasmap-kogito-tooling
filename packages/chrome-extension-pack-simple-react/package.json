@@ -22,16 +22,15 @@
     ]
   },
   "dependencies": {
-    "@kogito-tooling/chrome-extension": "0.2.2",
-    "@kogito-tooling/microeditor-envelope": "0.2.2",
+    "@kogito-tooling/chrome-extension": "0.4.2",
+    "@kogito-tooling/microeditor-envelope": "0.4.2",
     "simple-react-editors": "0.2.2"
   },
   "devDependencies": {
     "@types/jest": "23.3.1",
-    "babel-core": "6.26.3",
-    "babel-loader": "7.1.5",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-react": "6.24.1",
+    "@babel/core": "7.10.2",
+    "@babel/preset-react": "7.10.1",
+    "babel-loader": "8.1.0",
     "circular-dependency-plugin": "5.0.2",
     "clean-webpack-plugin": "0.1.19",
     "copy-webpack-plugin": "5.0.2",
@@ -44,7 +43,7 @@
     "tslint": "5.11.0",
     "tslint-config-prettier": "1.15.0",
     "tslint-react": "3.6.0",
-    "typescript": "2.9.2",
+    "typescript": "~3.8.3",
     "watch": "1.0.2",
     "webpack": "4.41.2",
     "webpack-cli": "3.3.9",

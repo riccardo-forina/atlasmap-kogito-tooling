@@ -21,9 +21,9 @@ export class SimpleReactEditorsRoutes implements Routes {
   public getRoutes() {
     return new Map<string, SimpleReactEditorsLanguageData>([
       [
-        "txt",
+        "adm",
         {
-          type: "my-editor-type",
+          type: "atlasmap-catalog",
           anyData: "something"
         }
       ]

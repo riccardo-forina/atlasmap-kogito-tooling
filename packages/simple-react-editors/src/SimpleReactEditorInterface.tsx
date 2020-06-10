@@ -34,6 +34,10 @@ export class SimpleReactEditorInterface extends Editor {
     return this.self.getContent();
   }
 
+  public getPreview(): Promise<string> {
+    return this.self.getContent();
+  }
+
   public isDirty(): boolean {
     return this.self.isDirty();
   }

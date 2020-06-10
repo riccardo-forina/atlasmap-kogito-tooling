@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import { ChannelType } from "@kogito-tooling/core-api";
 import * as MicroEditorEnvelope from "@kogito-tooling/microeditor-envelope";
 import { EnvelopeBusMessage } from "@kogito-tooling/microeditor-envelope-protocol";
 import { SimpleReactEditorsFactory } from "simple-react-editors";
@@ -25,5 +26,10 @@ MicroEditorEnvelope.init({
       window.parent.postMessage(message, targetOrigin!, _);
     }
   },
-  editorFactory: new SimpleReactEditorsFactory()
+  editorFactory: new SimpleReactEditorsFactory(),
+  editorContext: { channel: getChannelType() }
 });
+
+export function getChannelType(): ChannelType {
+  return ChannelType.GITHUB;
+}

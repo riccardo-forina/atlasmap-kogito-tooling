@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import { ChannelType } from "@kogito-tooling/core-api";
 import * as MicroEditorEnvelope from "@kogito-tooling/microeditor-envelope";
 import { SimpleReactEditorsFactory } from "simple-react-editors";
 
@@ -24,5 +25,6 @@ declare global {
 MicroEditorEnvelope.init({
   container: document.getElementById("envelope-app")!,
   busApi: acquireVsCodeApi(),
-  editorFactory: new SimpleReactEditorsFactory()
+  editorFactory: new SimpleReactEditorsFactory(),
+  editorContext: { channel: ChannelType.VSCODE }
 });
